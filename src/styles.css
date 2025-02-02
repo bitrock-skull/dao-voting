@@ -1,0 +1,237 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace; /* Use a monospace font for a tactical feel */
+  background: radial-gradient(circle, #2b2b2b, #1a1a1a); /* Dark gray gradient background */
+  color: #e0e0e0; /* Light gray text for contrast */
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Styling */
+header {
+  width: 100%;
+  background: linear-gradient(90deg, #3b3b3b, #2b2b2b); /* Dark gray gradient header */
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid #4caf50; /* Green accent for focus */
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.8;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Crosshair Overlay (Sniper Theme) */
+.crosshair-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Ensure it doesn't interfere with interactions */
+  z-index: 1000;
+}
+
+.crosshair-overlay::before,
+.crosshair-overlay::after {
+  content: '';
+  position: absolute;
+  background-color: #4caf50; /* Green crosshair lines */
+  width: 2px;
+  height: 40px;
+}
+
+.crosshair-overlay::before {
+  top: -20px;
+  left: 0;
+}
+
+.crosshair-overlay::after {
+  bottom: -20px;
+  left: 0;
+}
+
+.crosshair-overlay span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #4caf50; /* Horizontal crosshair line */
+}
+
+/* Main Content Container */
+.main-container {
+  max-width: 600px;
+  width: 90%;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: linear-gradient(45deg, #3b3b3b, #2b2b2b); /* Dark gray container */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4caf50, #388e3c); /* Green-to-dark-green gradient */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #388e3c, #4caf50); /* Invert gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+button + button {
+  margin-left: 1rem;
+}
+
+/* Input Fields */
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background: #444;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+
+input[type="text"]:focus {
+  background: #555; /* Slightly lighter background on focus */
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #999999;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Proposal Display */
+.proposal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.proposal-item {
+  background: #2b2b2b;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.proposal-item:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.proposal-item strong {
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.proposal-item span {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.alert.success {
+  background: linear-gradient(135deg, #4caf50, #388e3c); /* Success alert */
+}
+
+.alert.error {
+  background: linear-gradient(135deg, #f44336, #d32f2f); /* Error alert */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .main-container {
+    padding: 1.5rem;
+  }
+
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .proposal-item {
+    padding: 0.75rem;
+  }
+}
+
