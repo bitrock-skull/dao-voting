@@ -1,4 +1,4 @@
-import { useState , useEffect } from 'react';
+import { useState } from 'react';
 import { ethers } from 'ethers';
 
 console.log("Ethers library:", ethers); // Verify ethers is imported correctly
