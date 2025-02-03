@@ -316,7 +316,7 @@ const abi = [
 ];
 
 // Address of the deployed contract
-const contractAddress = "0xB1Cd91dA11f20b82c9C7C1a3F70CE5A64c4D6b12";
+const contractAddress = "0xA2125EB05ED60C6D03ef346f883111eD42d52aA3";
 const provider = new ethers.JsonRpcProvider("https://connect.bit-rock.io");
 const contractInstance = new ethers.Contract(contractAddress, abi, provider);
 
