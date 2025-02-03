@@ -422,7 +422,7 @@ function App() {
       alert("Proposal created successfully!");
     } catch (error) {
       console.error("Error creating proposal:", error);
-      alert("Failed to create proposal. Check the console.");
+      alert("Your not an Admin!");
     }
   };
 
